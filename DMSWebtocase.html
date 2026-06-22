@@ -9,37 +9,38 @@
 
 <style>
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
     font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-    margin:0;
     background:#eef2f7;
-    padding:40px 20px;
+    padding:40px 15px;
 }
 
 .container{
-    max-width:850px;
+    max-width:760px;
     margin:auto;
     background:#fff;
     border-radius:10px;
     overflow:hidden;
-    box-shadow:0 4px 18px rgba(0,0,0,.12);
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
 }
 
 .header{
     background:#173b67;
     color:#fff;
+    padding:22px 24px;
     display:flex;
     align-items:center;
-    padding:20px 24px;
 }
 
 .logo{
-    width:38px;
-    height:38px;
-    background:#f5a623;
+    width:36px;
+    height:36px;
+    background:#f4a328;
     border-radius:6px;
     display:flex;
     align-items:center;
@@ -49,27 +50,28 @@ body{
 }
 
 .header h2{
-    margin:0;
-    font-size:30px;
+    font-size:20px;
+    margin-bottom:4px;
 }
 
 .header p{
-    margin:4px 0 0;
-    font-size:14px;
+    font-size:13px;
 }
 
-.content{
-    padding:28px;
+.form-area{
+    padding:26px;
 }
 
-.section-title{
-    font-size:14px;
+.section{
+    margin-top:8px;
+    margin-bottom:20px;
+    padding-bottom:8px;
+    border-bottom:1px solid #dcdcdc;
+    font-size:13px;
     font-weight:bold;
     color:#173b67;
-    margin-top:10px;
-    margin-bottom:18px;
-    border-bottom:1px solid #dcdcdc;
-    padding-bottom:8px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
 }
 
 .row{
@@ -83,14 +85,13 @@ body{
 }
 
 .full{
-    width:100%;
     margin-bottom:18px;
 }
 
 label{
     display:block;
     margin-bottom:6px;
-    font-size:14px;
+    font-size:13px;
     font-weight:bold;
 }
 
@@ -99,13 +100,13 @@ select,
 textarea{
     width:100%;
     padding:11px;
-    border:1px solid #cfd6df;
+    border:1px solid #ccd4df;
     border-radius:4px;
     font-size:14px;
 }
 
 textarea{
-    min-height:130px;
+    min-height:120px;
     resize:vertical;
 }
 
@@ -116,24 +117,24 @@ button{
     border:none;
     padding:14px;
     border-radius:4px;
-    font-size:16px;
+    font-size:15px;
     font-weight:bold;
     cursor:pointer;
 }
 
 button:hover{
-    background:#0f2e52;
+    background:#0f2f56;
 }
 
-.note{
+.footer{
     text-align:center;
-    color:#888;
-    font-size:13px;
     margin-top:18px;
+    color:#888;
+    font-size:12px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <div class="container">
@@ -147,7 +148,7 @@ button:hover{
 </div>
 </div>
 
-<div class="content">
+<div class="form-area">
 
 <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DdL00000ZaM7V"
 method="POST">
@@ -160,7 +161,7 @@ value="https://chaitalidhande25.github.io/DMS-/ThankYou.html">
 
 <input type="hidden" name="external" value="1">
 
-<div class="section-title">
+<div class="section">
 YOUR DETAILS
 </div>
 
@@ -168,24 +169,24 @@ YOUR DETAILS
 
 <div class="col">
 <label>Contact Name *</label>
-<input id="name" name="name" maxlength="80" type="text" required>
-</div>
+<input type="text" id="name" name="name" maxlength="80" required>
 </div>
 
 <div class="col">
 <label>Phone Number</label>
-<input id="phone" name="phone" maxlength="80" type="text">
+<input type="text" id="phone" name="phone" maxlength="40">
+</div>
 
 </div>
 
-<div class="Full">
+<div class="full">
 <label>Email Address *</label>
-<input id="email" name="email" maxlength="40" type="email" required>
+<input type="email" id="email" name="email" maxlength="80" required>
 </div>
 
-<div class="section-title">
+<div class="section">
 CASE DETAILS
-
+</div>
 
 <div class="row">
 
@@ -196,6 +197,7 @@ CASE DETAILS
 <option value="Defective Product">Defective Product</option>
 <option value="Order Not Received">Order Not Received</option>
 <option value="Wrong Item Received">Wrong Item Received</option>
+<option value="Damaged Item Upon Arrival">Damaged Item Upon Arrival</option>
 <option value="Return Request">Return Request</option>
 <option value="Exchange Request">Exchange Request</option>
 <option value="Warranty Claim">Warranty Claim</option>
@@ -213,25 +215,27 @@ CASE DETAILS
 <option value="Low">Low</option>
 </select>
 </div>
+
 </div>
 
 <div class="full">
 <label>Subject *</label>
-<input id="subject" name="subject" maxlength="80" type="text" required>
-</div>
-
+<input type="text" id="subject" name="subject" maxlength="80" required>
 </div>
 
 <div class="full">
 <label>Description *</label>
-<textarea id="description" name="description" required></textarea>
+<textarea id="description"
+name="description"
+placeholder="Please describe your issue in detail..."
+required></textarea>
 </div>
 
 <button type="submit">
 Submit Case →
 </button>
 
-<div class="note">
+<div class="footer">
 Our support team will respond as soon as possible.
 </div>
 
