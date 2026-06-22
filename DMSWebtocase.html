@@ -1,234 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-
-<title>DMS Dealer Support</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#e8edf3;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:30px;
-}
-
-.card{
-    width:720px;
-    background:#fff;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 4px 18px rgba(0,0,0,.15);
-}
-
-.header{
-    background:#163d6b;
-    color:#fff;
-    padding:20px;
-    display:flex;
-    align-items:center;
-    gap:14px;
-}
-
-.logo{
-    width:42px;
-    height:42px;
-    border-radius:8px;
-    background:#ff9800;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    font-size:20px;
-}
-
-.header h2{
-    font-size:22px;
-}
-
-.header p{
-    font-size:13px;
-    opacity:.9;
-    margin-top:4px;
-}
-
-.form-body{
-    padding:28px;
-}
-
-.section-title{
-    margin:18px 0 10px;
-    font-size:13px;
-    font-weight:bold;
-    color:#163d6b;
-    text-transform:uppercase;
-}
-
-.row{
-    display:flex;
-    gap:16px;
-    margin-bottom:16px;
-}
-
-.col{
-    flex:1;
-}
-
-label{
-    display:block;
-    margin-bottom:6px;
-    font-size:13px;
-    font-weight:bold;
-}
-
-input,
-select,
-textarea{
-    width:100%;
-    padding:11px;
-    border:1px solid #ccd3db;
-    border-radius:6px;
-    font-size:14px;
-}
-
-textarea{
-    min-height:120px;
-    resize:vertical;
-}
-
-button{
-    width:100%;
-    margin-top:22px;
-    background:#163d6b;
-    color:white;
-    border:none;
-    padding:14px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:bold;
-}
-
-button:hover{
-    background:#0f2f54;
-}
-
-.footer{
-    text-align:center;
-    color:#666;
-    font-size:12px;
-    margin-top:18px;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>DMS Dealer Support</title>
 </head>
 
 <body>
 
-<div class="card">
+<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DdL00000ZaM7V"
+      method="POST">
 
-    <div class="header">
-        <div class="logo">D</div>
+    <input type="hidden" name="orgid" value="00DdL00000ZaM7V">
 
-        <div>
-            <h2>DMS Dealer Support</h2>
-            <p>Submit your support request and our team will respond shortly.</p>
-        </div>
-    </div>
+    <input type="hidden"
+           name="retURL"
+           value="https://chaitalidhande25.github.io/DMS-/ThankYou.html">
 
-    <div class="form-body">
+    <!-- Optional debugging -->
+    <!--
+    <input type="hidden" name="debug" value="1">
+    <input type="hidden" name="debugEmail" value="chaitalidhande25@gmail.com">
+    -->
 
-        <!-- Replace the action/orgid with your own generated Web-to-Case values -->
-        <form action="YOUR_WEB_TO_CASE_URL" method="POST">
+    <label for="name">Contact Name</label>
+    <input id="name" maxlength="80" name="name" size="20" type="text">
+    <br><br>
 
-            <input type="hidden" name="orgid" value="YOUR_ORG_ID">
-            <input type="hidden" name="retURL" value="https://www.google.com">
-            <input type="hidden" name="external" value="1">
+    <label for="email">Email</label>
+    <input id="email" maxlength="80" name="email" size="20" type="text">
+    <br><br>
 
-            <div class="section-title">Your Details</div>
+    <label for="phone">Phone</label>
+    <input id="phone" maxlength="40" name="phone" size="20" type="text">
+    <br><br>
 
-            <div class="row">
-                <div class="col">
-                    <label>Contact Name</label>
-                    <input type="text" name="name" placeholder="John Roy">
-                </div>
+    <label for="priority">Priority</label>
+    <select id="priority" name="priority">
+        <option value="">--None--</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select>
+    <br><br>
 
-                <div class="col">
-                    <label>Email Address</label>
-                    <input type="email" name="email" placeholder="dealer@example.com">
-                </div>
-            </div>
+    <label for="reason">Case Reason</label>
+    <select id="reason" name="reason">
+        <option value="">--None--</option>
+        <option value="Defective Product">Defective Product</option>
+        <option value="Sizing Issues">Sizing Issues</option>
+        <option value="Order Not Received">Order Not Received</option>
+        <option value="Wrong Item Received">Wrong Item Received</option>
+        <option value="Damaged Item Upon Arrival">Damaged Item Upon Arrival</option>
+        <option value="Feedback">Feedback</option>
+        <option value="Other">Other</option>
+        <option value="Delayed Shipment">Delayed Shipment</option>
+        <option value="Lost Package">Lost Package</option>
+        <option value="Return Request">Return Request</option>
+        <option value="Exchange Request">Exchange Request</option>
+        <option value="Refund Processing">Refund Processing</option>
+        <option value="Warranty Claim">Warranty Claim</option>
+        <option value="Shoe Repair Request">Shoe Repair Request</option>
+        <option value="Incorrect Charge">Incorrect Charge</option>
+        <option value="Refund Not Received">Refund Not Received</option>
+        <option value="Gift Card or Store Credit Issue">Gift Card or Store Credit Issue</option>
+        <option value="Discount Code Not Working">Discount Code Not Working</option>
+        <option value="Loyalty Points Missing">Loyalty Points Missing</option>
+        <option value="Rewards Redemption Issues">Rewards Redemption Issues</option>
+        <option value="Personalized Shoe Inquiry">Personalized Shoe Inquiry</option>
+        <option value="Bulk or Corporate Orders">Bulk or Corporate Orders</option>
+        <option value="In-Store Purchase Issue">In-Store Purchase Issue</option>
+        <option value="Store Availability Inquiry">Store Availability Inquiry</option>
+        <option value="Curbside Pickup Issues">Curbside Pickup Issues</option>
+        <option value="Service Complaint">Service Complaint</option>
+        <option value="Website/App Usability Issues">Website/App Usability Issues</option>
+    </select>
+    <br><br>
 
-            <div class="row">
-                <div class="col">
-                    <label>Phone Number</label>
-                    <input type="text" name="phone" placeholder="+91 9876543210">
-                </div>
-            </div>
+    <label for="subject">Subject</label>
+    <input id="subject" maxlength="80" name="subject" size="20" type="text">
+    <br><br>
 
-            <div class="section-title">Case Details</div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description"></textarea>
+    <br><br>
 
-            <div class="row">
-                <div class="col">
-                    <label>Subject</label>
-                    <input type="text" name="subject" placeholder="Brief description">
-                </div>
-            </div>
+    <input type="hidden" id="external" name="external" value="1">
 
-            <div class="row">
-                <div class="col">
-                    <label>Case Reason</label>
-                    <select name="reason">
-                        <option value="">-- Select Reason --</option>
-                        <option>Warranty Claim</option>
-                        <option>Defective Product</option>
-                        <option>Return Request</option>
-                        <option>Order Not Received</option>
-                        <option>Damaged Item</option>
-                        <option>Other</option>
-                    </select>
-                </div>
+    <input type="submit" value="Submit Case">
 
-                <div class="col">
-                    <label>Priority</label>
-                    <select name="priority">
-                        <option value="">-- Select Priority --</option>
-                        <option>High</option>
-                        <option>Medium</option>
-                        <option>Low</option>
-                    </select>
-                </div>
-            </div>
-
-            <label>Description</label>
-            <textarea name="description"
-                placeholder="Please describe the issue with relevant details..."></textarea>
-
-            <button type="submit">
-                Submit Case
-            </button>
-
-        </form>
-
-        <div class="footer">
-            Dealer Management System • Customer Support Portal
-        </div>
-
-    </div>
-
-</div>
+</form>
 
 </body>
 </html>
-
