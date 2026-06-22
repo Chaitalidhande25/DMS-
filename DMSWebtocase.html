@@ -1,159 +1,234 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS Support Portal - Raise a Case</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-        }
+<title>DMS Dealer Support</title>
 
-        .header {
-            background: #0b5cab;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 28px;
-            font-weight: bold;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-        .subheader {
-            text-align: center;
-            color: #555;
-            margin: 10px 0 25px;
-        }
+body{
+    background:#e8edf3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:30px;
+}
 
-        .container {
-            width: 50%;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-        }
+.card{
+    width:720px;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(0,0,0,.15);
+}
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
+.header{
+    background:#163d6b;
+    color:#fff;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
 
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
+.logo{
+    width:42px;
+    height:42px;
+    border-radius:8px;
+    background:#ff9800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:20px;
+}
 
-        textarea {
-            height: 120px;
-            resize: vertical;
-        }
+.header h2{
+    font-size:22px;
+}
 
-        .btn {
-            margin-top: 25px;
-            width: 100%;
-            background: #0b5cab;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+.header p{
+    font-size:13px;
+    opacity:.9;
+    margin-top:4px;
+}
 
-        .btn:hover {
-            background: #084b8a;
-        }
+.form-body{
+    padding:28px;
+}
 
-        .footer {
-            text-align: center;
-            color: gray;
-            margin-top: 20px;
-            font-size: 13px;
-        }
-    </style>
+.section-title{
+    margin:18px 0 10px;
+    font-size:13px;
+    font-weight:bold;
+    color:#163d6b;
+    text-transform:uppercase;
+}
+
+.row{
+    display:flex;
+    gap:16px;
+    margin-bottom:16px;
+}
+
+.col{
+    flex:1;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:11px;
+    border:1px solid #ccd3db;
+    border-radius:6px;
+    font-size:14px;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    margin-top:22px;
+    background:#163d6b;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#0f2f54;
+}
+
+.footer{
+    text-align:center;
+    color:#666;
+    font-size:12px;
+    margin-top:18px;
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="header">
-    Dealer Management System
-</div>
+<div class="card">
 
-<div class="subheader">
-    Customer Support | Raise a Service Request
-</div>
+    <div class="header">
+        <div class="logo">D</div>
 
-<div class="container">
+        <div>
+            <h2>DMS Dealer Support</h2>
+            <p>Submit your support request and our team will respond shortly.</p>
+        </div>
+    </div>
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DdL00000ZaM7V"
-      method="POST">
+    <div class="form-body">
 
-    <input type="hidden" name="orgid" value="00DdL00000ZaM7V">
-    <input type="hidden" name="retURL" value="https://www.google.com">
-    <input type="hidden" id="external" name="external" value="1">
+        <!-- Replace the action/orgid with your own generated Web-to-Case values -->
+        <form action="YOUR_WEB_TO_CASE_URL" method="POST">
 
-    <label>Contact Name</label>
-    <input type="text" name="name" maxlength="80" required>
+            <input type="hidden" name="orgid" value="YOUR_ORG_ID">
+            <input type="hidden" name="retURL" value="https://www.google.com">
+            <input type="hidden" name="external" value="1">
 
-    <label>Email</label>
-    <input type="email" name="email" maxlength="80" required>
+            <div class="section-title">Your Details</div>
 
-    <label>Phone</label>
-    <input type="text" name="phone" maxlength="40">
+            <div class="row">
+                <div class="col">
+                    <label>Contact Name</label>
+                    <input type="text" name="name" placeholder="John Roy">
+                </div>
 
-    <label>Case Reason</label>
-    <select name="reason" required>
-        <option value="">-- Select --</option>
-        <option>Defective Product</option>
-        <option>Order Not Received</option>
-        <option>Wrong Item Received</option>
-        <option>Damaged Item Upon Arrival</option>
-        <option>Return Request</option>
-        <option>Exchange Request</option>
-        <option>Warranty Claim</option>
-        <option>Refund Processing</option>
-        <option>Delayed Shipment</option>
-        <option>Other</option>
-    </select>
+                <div class="col">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="dealer@example.com">
+                </div>
+            </div>
 
-    <label>Priority</label>
-    <select name="priority">
-        <option>Low</option>
-        <option>Medium</option>
-        <option>High</option>
-    </select>
+            <div class="row">
+                <div class="col">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" placeholder="+91 9876543210">
+                </div>
+            </div>
 
-    <label>Subject</label>
-    <input type="text" name="subject" maxlength="80" required>
+            <div class="section-title">Case Details</div>
 
-    <label>Description</label>
-    <textarea name="description" required></textarea>
+            <div class="row">
+                <div class="col">
+                    <label>Subject</label>
+                    <input type="text" name="subject" placeholder="Brief description">
+                </div>
+            </div>
 
-    <button class="btn" type="submit">
-        Submit Case
-    </button>
+            <div class="row">
+                <div class="col">
+                    <label>Case Reason</label>
+                    <select name="reason">
+                        <option value="">-- Select Reason --</option>
+                        <option>Warranty Claim</option>
+                        <option>Defective Product</option>
+                        <option>Return Request</option>
+                        <option>Order Not Received</option>
+                        <option>Damaged Item</option>
+                        <option>Other</option>
+                    </select>
+                </div>
 
-</form>
+                <div class="col">
+                    <label>Priority</label>
+                    <select name="priority">
+                        <option value="">-- Select Priority --</option>
+                        <option>High</option>
+                        <option>Medium</option>
+                        <option>Low</option>
+                    </select>
+                </div>
+            </div>
 
-</div>
+            <label>Description</label>
+            <textarea name="description"
+                placeholder="Please describe the issue with relevant details..."></textarea>
 
-<div class="footer">
-    © 2026 Dealer Management System | Customer Support Portal
+            <button type="submit">
+                Submit Case
+            </button>
+
+        </form>
+
+        <div class="footer">
+            Dealer Management System • Customer Support Portal
+        </div>
+
+    </div>
+
 </div>
 
 </body>
 </html>
-```
+
